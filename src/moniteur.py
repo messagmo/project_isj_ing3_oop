@@ -25,3 +25,23 @@ class NetworkMonitor:
             self.stats[equip_name]['sent'] += 1
         else:
             self.stats[equip_name]['lost'] += 1
+            
+    def calculate_link_usage(self,link,packet):
+        packet_megabits = (packet.size * 8)/1_000_000
+        usage_percent = (packet_megabits / link.bandwidth) * 100
+        return round(usage_percent, 4)
+    
+    def generate_report(self):
+        f.write("=== SIMNet MODULE 4: NETWORK REPORT ===\n")
+        f.write(f"Generated on{datetime.now()}\n\n")
+        f.write("1. EQUIPEMENT STATUS:\n")
+        for equip in self.topology.equipements:
+            status = "ACTIVE" if equip.status == "actif" else "INACTIVE"
+            f.write(f"-{equip.name}: {status}\n")
+        f.write("\n2. TRAFFIC STATISTICS:\n")
+        for name, data in self.stats.items():
+            f.write(f"-{name}: {data['sent']} Passed, {data['Lost']}} Lost\n")
+        f.write("\n3. PACKET LOG (Last 10):\n")
+        for log in self.packet_history:
+            f.write(f" {log}\n")
+        print("Report generated successfully.")
