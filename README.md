@@ -12,7 +12,7 @@
 
 | Prénom NOM 4 | Module 4 — Surveillance |
 
-| MESSAGMO CLARA | Module 5 — Menu interactif |
+| MESSAGMO WAMBA Mireiile Clara | Module 5 — Menu interactif |
 
 ## Lancement
 
