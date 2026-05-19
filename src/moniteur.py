@@ -45,3 +45,23 @@ class NetworkMonitor:
         for log in self.packet_history:
             f.write(f" {log}\n")
         print("Report generated successfully.")
+        
+        
+        
+        
+    def calculate_link_load(self,link,packet):
+        """  Calculates what percentage of the link's bandwidth a single packet represents. """
+        
+        packet_megabits = (packet.size * 8)/1000000
+        usage_percent = (packet_megabits / link.bandwidth) * 100
+        
+        return round(usage_percent,4)
+    
+    def get_topology_utilization(sekf):
+        """ Returns a summary of how busy the liks are."""
+        
+        report_lines = []
+        for link in self.topology.links:
+            usage = f"Link {link.id}: Bandwidth{link.bandwidth} Mbps, Latency {link.latency} ms"
+            report_lines.append(usage)
+        return report_lines
