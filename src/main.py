@@ -429,11 +429,11 @@ def main():
             sous_menu_supprimer_lien(topologie)
  
         elif choix == "6":
-            # Module 2 — pas encore prêt → placeholder
+            # Module 3 — pas encore prêt → placeholder
             placeholder_envoyer_paquet(topologie, moniteur)
  
         elif choix == "7":
-            # Module 3 — pas encore prêt → placeholder
+            # Module 4 — pas encore prêt → placeholder
             placeholder_firewall(topologie)
  
         elif choix == "8":
