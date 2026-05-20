@@ -396,11 +396,11 @@ def main():
     # Création du moniteur réseau (utilise la classe de moniteur.py)
     moniteur = NetworkMonitor(topologie)
  
-    #  PLACEHOLDER : Simulateur (Module 2) 
+    #  PLACEHOLDER : Simulateur (Module 3) 
     # Sera remplacé quand paquets.py sera prêt
     # simulateur = Simulateur(topologie)
  
-    #  PLACEHOLDER : Gestionnaire sécurité (Module 3) 
+    #  PLACEHOLDER : Gestionnaire sécurité (Module 4) 
     # Sera remplacé quand securite.py sera prêt
     # gestionnaire = GestionnaireSecurite(firewall_demo)
     #  BOUCLE PRINCIPALE 
