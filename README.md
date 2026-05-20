@@ -6,7 +6,7 @@
 
 | Prénom NOM 1 | Module 1 — Équipements |
 
-| Prénom NOM 2 | Module 2 — Topologie & Routage |
+|Ngningha Ngnintedem Audrey| Module 2 — Topologie & Routage |
 
 | Prénom NOM 3 | Module 3 — Sécurité |
 
@@ -21,7 +21,11 @@ python src/main.py
 ```
 
 ## Fonctionnalités implémentées
-- 
-- 
-- 
+-
+-
+-
+- Gestion des équipements et connexions
+- Algorithme BFS pour trouver le chemin le plus court
+- Calcul des tables de routage pour les routeurs
+- Intégration avec equipements.py
 - Menu interactif complet 
