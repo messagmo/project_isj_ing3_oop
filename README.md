@@ -6,7 +6,7 @@
 
 | Prénom NOM 1 | Module 1 — Équipements |
 
-|Ngningha Ngnintedem Audrey| Module 2 — Topologie & Routage |
+| Ngningha Ngnintedem Audrey | Module 2 — Topologie & Routage |
 
 | Prénom NOM 3 | Module 3 — Sécurité |
 
