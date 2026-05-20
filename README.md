@@ -6,9 +6,9 @@
 
 | Prénom NOM 1 | Module 1 — Équipements |
 
-| Ngningha Ngnintedem Audrey | Module 2 — Topologie & Routage |
+| Ngningha Ngnintedem Audrey| Module 2 — Topologie & Routage |
 
-| Prénom NOM 3 | Module 3 — Sécurité |
+| Tientcheu Kamga Orthys Cassandra| Module 3 — Sécurité |
 
 | Prénom NOM 4 | Module 4 — Surveillance |
 
@@ -24,8 +24,18 @@ python src/main.py
 -
 -
 -
+-
+- 
 - Gestion des équipements et connexions
 - Algorithme BFS pour trouver le chemin le plus court
 - Calcul des tables de routage pour les routeurs
 - Intégration avec equipements.py
+- Authentification
+- changement de mot de passe
+- ajout,suppression et affichage des regles
+- inspection de paquet et journalisation
+- affichage du journal
+-
+-
+-
 - Menu interactif complet 
