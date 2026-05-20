@@ -40,7 +40,7 @@ class NetworkMonitor:
             f.write(f"-{equip.name}: {status}\n")
         f.write("\n2. TRAFFIC STATISTICS:\n")
         for name, data in self.stats.items():
-            f.write(f"-{name}: {data['sent']} Passed, {data['Lost']}} Lost\n")
+            f.write(f"-{name}: {data['sent']} Passed, {data['lost']} Lost\n")
         f.write("\n3. PACKET LOG (Last 10):\n")
         for log in self.packet_history:
             f.write(f" {log}\n")
