@@ -1,1 +1,93 @@
+##   
+Sujet : Conception et réalisation d'un simulateur de trafic réseau avec filtrage et surveillance -SIMNet 
+
+groupe_9
+
+membres :                                  
+ABADA OWONA Cyrielle-Lisette         
+MESSAGMO WAMBA Mireiile Clara                       
+TIENCHEU KAMGA Orthys Cassandra      
+NGNINGHA NGNINTEDEM Estelle Audrey    
+MUKETE MILDRED ESIMO                  
+
+
+ 1. INTRODUCTION
+Dans un monde de plus en plus connecté, la compréhension des flux réseau et de leur sécurisation est cruciale. Le projet SimNet a pour objectif de concevoir un outil de simulation pédagogique permettant de modéliser une topologie réseau complexe, de simuler le passage de paquets de données et d'appliquer des politiques de sécurité strictes via un pare-feu (Firewall). 
+
+Ce rapport présente l'architecture logicielle, les algorithmes de routage choisis et les fonctionnalités de surveillance implémentées par notre équipe de cinq ingénieurs.
+
+
+
+ 2. ARCHITECTURE DU LOGICIEL (Module 1)
+L'architecture repose sur la Programmation Orientée Objet (POO) pour garantir la modularité du système.
+
+•  Classe Mère Equipement : Définit les propriétés communes (Nom, Marque, IPv4, Statut actif/inactif).
+•  Spécialisations :
+  •  Routeur : Gère une table de routage.
+  •  Switch : Gère la segmentation par VLANs.
+  •  Firewall : Centralise les règles de filtrage.
+  •  Serveur : Expose des services (HTTP, FTP, etc.).
+•  Classe Lien : Modélise la connexion physique entre deux équipements, caractérisée par une bande passante (Mbps) et une latence (ms).
+
+
+
+ 3. MOTEUR DE SIMULATION ET ROUTAGE (Module 2)
+Le cœur du simulateur gère le déplacement des paquets "saut par saut" (hop-by-hop).
+
+ 3.1 Caractéristiques du Paquet
+Chaque paquet simulé possède :
+•  Une adresse IP source et destination.
+•  Un protocole (TCP, UDP ou ICMP).
+•  Une taille en octets et un niveau de priorité (1 à 5).
+
+ 3.2 Algorithme de Routage : Dijkstra
+Nous avons choisi l'algorithme de Dijkstra pour déterminer le cheminement des paquets. 
+•  Justification : Cet algorithme est idéal pour trouver le chemin le plus court dans un graphe pondéré. Dans SimNet, le "poids" d'un lien est défini par sa latence. Le simulateur privilégie donc les chemins les plus rapides.
+•  Gestion des pannes : Si un équipement sur le chemin est marqué "inactif", l'algorithme recalcule dynamiquement un itinéraire alternatif ou déclare la destination "inatteignable".
+
+
+
+ 4. SÉCURITÉ ET FILTRAGE (Module 3)
+Le module de sécurité agit comme une sentinelle entre les équipements.
+
+•  Inspection : Tout paquet traversant un Firewall est analysé selon trois critères : IP source, Protocole et Port de destination.
+•  Journalisation : Chaque décision (Autoriser/Bloquer) est enregistrée avec un horodatage précis.
+•  Authentification : L'accès à la modification des règles du Firewall est protégé par un couple Login/Mot de passe, simulant une administration réseau réelle.
+
+
+
+ 5. SURVEILLANCE ET EXPLOITATION (Module 4)
+Pour analyser les performances du réseau, un moniteur collecte des données en temps réel.
+
+•  Statistiques collectées : Taux d'utilisation des liens, pourcentage de paquets perdus et temps de transit moyen.
+•  Historique : Chaque équipement conserve en mémoire les 10 derniers paquets traités pour faciliter le débogage.
+•  Rapport d'exploitation : Le système génère automatiquement un fichier nommé rapport_simnet.txt contenant un résumé détaillé de l'état du réseau et des flux observés.
+
+
+
+ 6. INTERFACE UTILISATEUR (Module 5)
+L'interaction avec le simulateur se fait via une console interactive intuitive. Le menu permet à l'utilisateur de :
+1. Construire : Ajouter ou supprimer des équipements et des câbles.
+2. Visualiser : Afficher la topologie actuelle.
+3. Simuler : Envoyer un paquet et voir son parcours en temps réel.
+4. Administrer : Consulter les logs du firewall et les statistiques global
+
+ 
+7.DIFFICULTES RENCONTREES
+    *utilisation et manipulation de l'outil  github
+    *Clonage du fork
+    * l'installation de l'extension phthon dans VS-code
+    * l'installation de git bash et la configuration
+    
+
+ 8. CONCLUSION ET PERSPECTIVES
+Le projet SimNet remplit l'ensemble des objectifs du cahier des charges. Il offre une base solide pour comprendre le routage IP et les politiques de sécurité.
+
+Perspectives d'amélioration :
+•  Implémentation d'une interface graphique (GUI) pour visualiser le réseau.
+•  Simulation de la congestion (baisse de débit lorsque trop de paquets circulent).
+•  Support des protocoles de routage dynamique comme OSPF.
+
+
+
  
