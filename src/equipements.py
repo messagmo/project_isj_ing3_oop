@@ -27,7 +27,7 @@ class Firewall(Equipement):
         super().__init__(nom, ip, marque)
         self.regles = []
         self.password = "admin123"
-        self._authentifie = False        
+        self._authentifie = False      
 
     def authentifier(self, mot_de_passe):  
         if mot_de_passe == self.password:
