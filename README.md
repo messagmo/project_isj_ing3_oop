@@ -4,7 +4,7 @@
 
 ### Membres
 
-| Prénom NOM 1 | Module 1 — Équipements |
+| ABADA OWONA Cyrielle-Lisette | Module 1 — Équipements |
 
 | Ngningha Ngnintedem Audrey| Module 2 — Topologie & Routage |
 
@@ -21,11 +21,11 @@ python src/main.py
 ```
 
 ## Fonctionnalités implémentées
--
--
--
--
-- 
+-declartion des differentes classes
+-creation  d'appareils
+-ajout d'equipements
+-creation de liens 
+- affichage du reseau
 - Gestion des équipements et connexions
 - Algorithme BFS pour trouver le chemin le plus court
 - Calcul des tables de routage pour les routeurs
