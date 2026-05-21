@@ -25,8 +25,82 @@ class Switch(Equipement):
 class Firewall(Equipement):
     def __init__(self, nom, ip, marque):
         super().__init__(nom, ip, marque)
-        self.regles = [] # Sera rempli par le responsable Module 3
-        self.password = "admin123" # Protection simple
+        self.regles = []
+        self.password = "admin123"
+        self._authentifie = False        
+
+    def authentifier(self, mot_de_passe):  
+        if mot_de_passe == self.password:
+            self._authentifie = True
+            print("Authentification reussie.")
+            return True
+        self._authentifie = False
+        print("Mot de passe incorrect.")
+        return False
+
+    def ajouter_regle(self, action, ip_source, protocole=None, port=None, plage_reseau=None):
+        if not self._authentifie:
+            print("Acces refuse.")
+            return
+        if port:
+            try:
+                port = int(port)
+            except ValueError:
+                print("Port invalide.")
+                return
+        regle = {
+            "action": action.upper(),
+            "ip_source": ip_source,
+            "protocole": protocole.upper() if protocole else None,
+            "port": port,
+            "plage_reseau": plage_reseau
+        }
+        self.regles.append(regle)
+        print(f"Regle ajoutee : {regle}")
+
+    def afficher_regles(self):
+        print("\n--- REGLES DU FIREWALL ---")
+        if not self.regles:
+            print("Aucune regle configuree.")
+            return
+        for i, r in enumerate(self.regles):
+            print(f"[{i}] {r}")
+
+    def supprimer_regle(self, index):
+        if not self._authentifie:
+            print("Acces refuse.")
+            return
+        if 0 <= index < len(self.regles):
+            sup = self.regles.pop(index)
+            print(f"Regle supprimee : {sup}")
+        else:
+            print("Index invalide.")
+
+    def inspecter_paquet(self, ip_source, protocole, port):
+        if port:
+            try:
+                port = int(port)
+            except ValueError:
+                port = None
+        for regle in self.regles:
+            ok = True
+            if regle["ip_source"] and regle["ip_source"] != ip_source:
+                ok = False
+            if regle["protocole"]:
+                if not protocole or regle["protocole"] != protocole.upper():
+                    ok = False
+            if regle["port"] and regle["port"] != port:
+                ok = False
+            if regle["plage_reseau"] and not ip_source.startswith(regle["plage_reseau"]):
+                ok = False
+            if ok:
+                return regle["action"]
+        return "REFUSER (Defaut)"
+
+    def afficher_journal(self):
+        print("(Journal non disponible dans cette version)")
+
+
 
 class Serveur(Equipement):
     def __init__(self, nom, ip, marque):
