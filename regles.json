@@ -1,0 +1,30 @@
+[
+    {
+        "action": "AUTORISER",
+        "ip_source": "198.168.10.2",
+        "protocole": "TCP",
+        "port": 53,
+        "plage_reseau": "10.0.0"
+    },
+    {
+        "action": "AUTORISER",
+        "ip_source": "198.168.10.2",
+        "protocole": "TCP",
+        "port": 53,
+        "plage_reseau": "10.0.0"
+    },
+    {
+        "action": "AUTORISER",
+        "ip_source": "198.168.10.2",
+        "protocole": "TCP",
+        "port": 53,
+        "plage_reseau": "10.0.0"
+    },
+    {
+        "action": "BLOQUER",
+        "ip_source": "192.168.10.0",
+        "protocole": "UDP",
+        "port": 53,
+        "plage_reseau": "10.0.0.0."
+    }
+]
