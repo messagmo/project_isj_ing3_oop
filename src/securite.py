@@ -228,6 +228,7 @@ class Firewall(Equipement):
             return
 
         print(f"{'Horodatage':<20} | {'IP Source':<16} | {'Proto:Port':<12} | {'Decision'}")
+        
         print("-" * 70)
         
         for entree in self.journal:
