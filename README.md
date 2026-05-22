@@ -10,7 +10,7 @@
 
 | Tientcheu Kamga Orthys Cassandra| Module 3 — Sécurité |
 
-| Prénom NOM 4 | Module 4 — Surveillance |
+| MUKETE Mildred Esimo | Module 4 — Surveillance |
 
 | MESSAGMO WAMBA Mireiile Clara | Module 5 — Menu interactif |
 
@@ -21,10 +21,10 @@ python src/main.py
 ```
 
 ## Fonctionnalités implémentées
--declartion des differentes classes
--creation  d'appareils
--ajout d'equipements
--creation de liens 
+- declartion des differentes classes
+- creation  d'appareils
+- ajout d'equipements
+- creation de liens 
 - affichage du reseau
 - Gestion des équipements et connexions
 - Algorithme BFS pour trouver le chemin le plus court
@@ -35,7 +35,9 @@ python src/main.py
 - ajout,suppression et affichage des regles
 - inspection de paquet et journalisation
 - affichage du journal
--
--
--
+- Equipment status tracking
+- Real-Time packet History
+- Traffic Statistics
+- Link capacity and utilization Analysis
+- Automated text report generation
 - Menu interactif complet 
