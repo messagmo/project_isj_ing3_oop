@@ -78,9 +78,9 @@ L'interaction avec le simulateur se fait via une console interactive intuitive. 
     • Clonage du fork
     • l'installation de l'extension phthon dans VS-code
     • l'installation de git bash et la configuration
-    •
-    •
-    
+    • Difficulte pour se connecter au depot git-up
+    • Difficulte a push le projet sur notre branche
+    - Difficulte a joindre le code aux autres codes qui avaient deja ete push sur la branches git    
 
  8. CONCLUSION ET PERSPECTIVES
 Le projet SimNet remplit l'ensemble des objectifs du cahier des charges. Il offre une base solide pour comprendre le routage IP et les politiques de sécurité.
