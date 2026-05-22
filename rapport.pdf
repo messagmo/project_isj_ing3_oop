@@ -62,6 +62,8 @@ Pour analyser les performances du réseau, un moniteur collecte des données en 
 •  Statistiques collectées : Taux d'utilisation des liens, pourcentage de paquets perdus et temps de transit moyen.
 •  Historique : Chaque équipement conserve en mémoire les 10 derniers paquets traités pour faciliter le débogage.
 •  Rapport d'exploitation : Le système génère automatiquement un fichier nommé rapport_simnet.txt contenant un résumé détaillé de l'état du réseau et des flux observés.
+-  Status Analysis: Automatic operational checks on connected network devices.
+-  Link Utilization: Calculating real-time connection load percentages.
 
 
 
@@ -81,6 +83,7 @@ L'interaction avec le simulateur se fait via une console interactive intuitive. 
     • Difficulte pour se connecter au depot git-up
     • Difficulte a push le projet sur notre branche
     - Difficulte a joindre le code aux autres codes qui avaient deja ete push sur la branches git    
+    - Handling Git Merge Commits and blocked Terminls
 
  8. CONCLUSION ET PERSPECTIVES
 Le projet SimNet remplit l'ensemble des objectifs du cahier des charges. Il offre une base solide pour comprendre le routage IP et les politiques de sécurité.
