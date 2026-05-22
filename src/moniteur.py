@@ -32,19 +32,20 @@ class NetworkMonitor:
         return round(usage_percent, 4)
     
     def generate_report(self):
-        f.write("=== SIMNet MODULE 4: NETWORK REPORT ===\n")
-        f.write(f"Generated on{datetime.now()}\n\n")
-        f.write("1. EQUIPEMENT STATUS:\n")
-        for equip in self.topology.equipements:
-            status = "ACTIVE" if equip.status == "actif" else "INACTIVE"
-            f.write(f"-{equip.name}: {status}\n")
-        f.write("\n2. TRAFFIC STATISTICS:\n")
-        for name, data in self.stats.items():
-            f.write(f"-{name}: {data['sent']} Passed, {data['lost']} Lost\n")
-        f.write("\n3. PACKET LOG (Last 10):\n")
-        for log in self.packet_history:
-            f.write(f" {log}\n")
-        print("Report generated successfully.")
+        with open("rapport_simnet.txt","w") as f:
+            f.write( "=== SIMNet MODULE 4: NETWORK REPORT ===\n" )
+            f.write(f"Generated on{datetime.now()}\n\n")
+            f.write("1. EQUIPEMENT STATUS:\n")
+            for equip in self.topology.equipements:
+                status = "ACTIVE" if equip.status == "actif" else "INACTIVE"
+                f.write(f"-{equip.name}: {status}\n")
+            f.write("\n2. TRAFFIC STATISTICS:\n")
+            for name, data in self.stats.items():
+                f.write(f"-{name}: {data['sent']} Passed, {data['lost']} Lost\n")
+            f.write("\n3. PACKET LOG (Last 10):\n")
+            for log in self.packet_history:
+                f.write(f" {log}\n")
+            print("Report generated successfully.")
         
         
         
